@@ -12,25 +12,25 @@ $(document).ready(function(){
 
 
 function draw(){
-	var colour = "red";
-
+	
 	// Creates canvas 320 × 200 at 10, 50
 	var paper = Raphael(10, 50, 320, 200);
 
 	// Creates circle at x = 50, y = 40, with radius 10
 	var circle = paper.circle(50, 40, 10);
 	// Sets the fill attribute of the circle
+	circle.data("color","red");
 	circle.attr("fill", "red");
 
 	// Sets the stroke attribute of the circle to white
 	circle.attr("stroke", "#fff");
 	circle.click(function changeColor() {
-		if (colour == "red") {
+		if (circle.data("color") == "red") {
 			circle.attr("fill", "green");
-			colour = "green";
+			circle.data("color","green");
 		} else {
 			circle.attr("fill", "red");
-			colour = "red";
+			circle.data("color","red");
 		}
 	});
 
