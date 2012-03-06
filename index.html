@@ -23,9 +23,24 @@ function draw(state){
 		// Creates circle at x = 50, y = 40, with radius 10
 		var circles = [];
 		
-		for(var i = 0; i < 4; i++){
+		for(var i = 0; i < 5; i++){
 			incr = i * 20;
 			circles[i] = paper.circle(50 + incr, 40, 10);
+			
+			switch(state[i]){
+				case 0:
+					circles[i].attr("fill", "white");
+					circles[i].data("color","white");
+					break;
+				case 1:
+					circles[i].attr("fill", "red");
+					circles[i].data("color","red");
+					break;
+				case 2:
+					circles[i].attr("fill", "green");
+					circles[i].data("color","green");
+					break;
+			}
 		}
 	
 	
@@ -43,7 +58,7 @@ function draw(state){
 	});
 
 	for (var i = 0; i < circles.length; i++){
-		circles[i].attr("fill", "blue");
+		//circles[i].attr("fill", "#fff");
 	}
 
 }
